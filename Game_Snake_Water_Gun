@@ -1,0 +1,59 @@
+import random
+
+def gameWin(player,comp):
+    if player == comp:
+        return None
+    elif comp == "S":
+        if player == "W":
+            return False
+        elif player == "G":
+            return True
+    elif comp == "W":
+        if player == "S":
+            return True
+        elif player == "G":
+            return False
+    elif comp == "G":
+        if player == "W":
+            return True
+        elif player == "S":
+            return False
+
+
+while True:
+    
+    a = input("Do you want to play the game Y/N: ")
+    if a=="Y":
+        print("Computer's Turn : Snake (S), Water(W), Gun(G) ")
+        num = random.randint(1,3)
+        if num == 1:
+            comp= "S"
+        elif num == 2:
+            comp= "W"
+        elif num == 3:
+            comp= "G"
+        while True:
+            player = input("Choose either of gun(G),water(W) or snake(S)")
+            if player == "G" or player == "W" or player == "S":
+                b = gameWin(player,comp)
+
+                print(f"Computer chose {comp}")
+                print(f"You chose {player}")
+
+                if b == None:
+                    print("Match Tie")
+                elif b== True:
+                    print("Player Wins")
+                else:
+                    print("Computer Wins")
+                break
+            else:
+                print("Invalid options choose")
+            
+    elif a=="N":
+        break
+    else:
+        print("Please input correct options either Y or N : ")
+
+   
+
