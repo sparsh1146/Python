@@ -1,0 +1,92 @@
+from tkinter import *
+import datetime as dt
+
+
+def date_time():
+    time = dt.datetime.now()
+    hr = time.strftime('%H')
+    min = time.strftime('%M')
+    sec = time.strftime('%S')
+    am = time.strftime('%p')
+    date = time.strftime('%d')
+    mon = time.strftime('%m')
+    year = time.strftime('%y')
+    day = time.strftime('%a')
+
+
+    label_hr.config(text=hr)
+    label_min.config(text=min)
+    label_sec.config(text=sec)
+    label_am.config(text=am)
+    label_date.config(text=date)
+    label_mon.config(text=mon)
+    label_year.config(text=year)
+    label_day.config(text=day)
+    label_sec.after(200,date_time)
+
+
+clock = Tk()
+clock.title("   ***Digital Clock***   ")
+clock.geometry("800x500")
+clock.config(bg = 'yellow')
+
+
+label_hr = Label(clock,text = '00',font=('Times New Roman',50,'bold'),
+bg = 'red',fg='white')
+label_hr.place(x=50,y=50,width=100)
+label_hr_txt = Label(clock,text = 'Hour',font=('Times New Roman',20,'bold'),
+bg = 'red',fg='white')
+label_hr_txt.place(x=50,y=150,width=100)
+label_min = Label(clock,text = '00',font=('Times New Roman',50,'bold'),
+bg = 'red',fg='white')
+label_min.place(x=250,y=50,width=100)
+label_min_txt = Label(clock,text = 'Min.',font=('Times New Roman',20,'bold'),
+bg = 'red',fg='white')
+label_min_txt.place(x=250,y=150,width=100)
+label_sec = Label(clock,text = '00',font=('Times New Roman',50,'bold'),
+bg = 'red',fg='white')
+label_sec.place(x=450,y=50,width=100)
+label_sec_txt = Label(clock,text = 'Sec.',font=('Times New Roman',20,'bold'),
+bg = 'red',fg='white')
+label_sec_txt.place(x=450,y=150,width=100)
+label_am = Label(clock,text = '00',font=('Times New Roman',45,'bold'),
+bg = 'red',fg='white')
+label_am.place(x=650,y=50,width=100)
+label_am_txt = Label(clock,text = 'AM/PM',font=('Times New Roman',20,'bold'),
+bg = 'red',fg='white')
+label_am_txt.place(x=650,y=150,width=100)
+
+# *******************************
+
+label_date = Label(clock,text = '00',font=('Times New Roman',50,'bold'),
+bg = 'red',fg='white')
+label_date.place(x=50,y=250,width=100)
+label_date_txt = Label(clock,text = 'Date',font=('Times New Roman',20,'bold'),
+bg = 'red',fg='white')
+label_date_txt.place(x=50,y=350,width=100)
+
+label_mon = Label(clock,text = '00',font=('Times New Roman',50,'bold'),
+bg = 'red',fg='white')
+label_mon.place(x=250,y=250,width=100)
+label_mon_txt = Label(clock,text = 'Month',font=('Times New Roman',20,'bold'),
+bg = 'red',fg='white')
+label_mon_txt.place(x=250,y=350,width=100)
+
+label_year = Label(clock,text = '00',font=('Times New Roman',50,'bold'),
+bg = 'red',fg='white')
+label_year.place(x=450,y=250,width=100)
+label_year_txt = Label(clock,text = 'Year',font=('Times New Roman',20,'bold'),
+bg = 'red',fg='white')
+label_year_txt.place(x=450,y=350,width=100)
+
+label_day = Label(clock,text = '00',font=('Times New Roman',50,'bold'),
+bg = 'red',fg='white')
+label_day.place(x=650,y=250,width=100)
+label_day_txt = Label(clock,text = 'Day',font=('Times New Roman',20,'bold'),
+bg = 'red',fg='white')
+label_day_txt.place(x=650,y=350,width=100)
+
+
+date_time()
+
+clock.mainloop()
